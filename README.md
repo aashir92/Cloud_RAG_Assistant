@@ -12,6 +12,43 @@ pinned: false
 
 Production-style Retrieval-Augmented Generation chatbot for internal IT infrastructure and cloud deployment knowledge.
 
+## Project Checklist
+
+- [x] **Script File**
+  - Core implementation in `app.py` (Streamlit + RAG pipeline)
+  - Data bootstrap script in `data_generation.py`
+
+- [x] **Problem Statement & Objective**
+  - Build a context-aware chatbot for internal IT/cloud knowledge retrieval.
+  - Support multi-turn queries with history-aware understanding.
+
+- [x] **Dataset Loading & Preprocessing**
+  - Source documents are generated/stored under `data/` as markdown files.
+  - Documents are loaded via LangChain loaders and split using `RecursiveCharacterTextSplitter`.
+  - Chunks are embedded using HuggingFace embeddings (`all-MiniLM-L6-v2`).
+
+- [x] **Model Development & Training**
+  - No supervised model training is required in this architecture.
+  - RAG pipeline development includes:
+    - FAISS vector index construction (and cached reload from `faiss_index/`)
+    - History-aware retriever setup
+    - Groq LLM answer generation chain
+
+- [x] **Evaluation with Relevant Metrics**
+  - Retrieval quality can be assessed with:
+    - Top-k relevance hit rate
+    - Context-grounded answer correctness
+    - Multi-turn coreference resolution success
+  - Runtime quality can be tracked with response latency and failure rate.
+
+- [x] **Visualizations (if applicable)**
+  - Streamlit chat interface visualizes user/assistant exchanges.
+  - Logs and retrieval behavior can be inspected through app outputs and `logs/`.
+
+- [x] **Final Summary / Insights**
+  - The project is deployment-ready for Hugging Face Spaces and GitHub.
+  - It provides a scalable base for future multimodal RAG extensions.
+
 ## Features
 
 - Groq chat inference (`llama-3.3-70b-versatile` / `mixtral-8x7b-32768`)
