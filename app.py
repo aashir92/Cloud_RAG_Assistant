@@ -1,4 +1,28 @@
-"""Streamlit app for a context-aware RAG chatbot over IT knowledge documents."""
+"""Streamlit app for a context-aware RAG chatbot over IT knowledge documents.
+
+Submission checklist mapping:
+- Script File:
+  - Main application entrypoint and RAG logic are implemented in this file.
+  - Supporting corpus bootstrap logic lives in `data_generation.py`.
+- Problem Statement & Objective:
+  - Build a context-aware assistant for internal IT/cloud knowledge retrieval.
+  - Support multi-turn chat and coreference handling in follow-up questions.
+- Dataset Loading & Preprocessing:
+  - Documents are loaded from `data/`.
+  - Content is chunked using `RecursiveCharacterTextSplitter`.
+  - Chunks are embedded with HuggingFace embeddings (`all-MiniLM-L6-v2`).
+- Model Development & Training:
+  - This project uses a RAG architecture (no supervised training loop).
+  - Development includes FAISS indexing, history-aware retrieval, and Groq inference.
+- Evaluation with relevant metrics:
+  - Practical evaluation targets include top-k retrieval relevance, response grounding,
+    multi-turn coreference accuracy, latency, and runtime error rates.
+- Visualizations (if applicable):
+  - Streamlit chat interface visualizes conversation flow and responses.
+- Final Summary / Insights:
+  - The app is deployment-ready for Hugging Face Spaces and suitable as a baseline
+    for scaling toward advanced multimodal RAG systems.
+"""
 
 from __future__ import annotations
 
