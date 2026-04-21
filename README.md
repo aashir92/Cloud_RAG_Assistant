@@ -1,5 +1,5 @@
 ---
-title: Gradio Chatbot
+title: Cloud RAG Assistant
 emoji: 💬
 colorFrom: yellow
 colorTo: purple
